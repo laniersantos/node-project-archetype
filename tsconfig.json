@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Node 16",
+  
+    "compilerOptions": {
+      "lib": ["dom", "ES6", "es2021"],
+      "module": "commonjs",
+      "target": "es2021",
+      "outDir": "build",
+      "alwaysStrict": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "allowSyntheticDefaultImports": true,
+      "noFallthroughCasesInSwitch": true,
+
+      // Module resolution
+      "esModuleInterop": true, // fixes some issues TS originally had with the ES6 spec where TypeScript treats CommonJS/AMD/UMD modules similar to ES6 module
+      "moduleResolution": "node", // Pretty much always node for modern JS. Other option is "classic"
+
+      // Source Map
+      "sourceMap": true, // enables the use of source maps for debuggers and error reporting etc
+      "sourceRoot": "./src", // Specify the location where a debugger should locate TypeScript files instead of relative source locations.
+
+      // Linter Checks
+      "noUnusedLocals": true, // Report errors on unused local variables.
+      "noUnusedParameters": true // Report errors on unused parameters in functions
+    },
+    "exclude": [
+        "node_modules",
+        "builds"
+    ],
+    "include": ["src/**/*.ts", "test/**/*.ts"]
+  }
